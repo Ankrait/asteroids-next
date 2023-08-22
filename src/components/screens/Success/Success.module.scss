@@ -1,0 +1,27 @@
+.wrapper {
+	max-width: 402px;
+	width: 100%;
+	height: 100%;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.29;
+}
+
+.item {
+	padding: 12px 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.wrapper {
+		max-width: 322px;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.wrapper {
+		max-width: 279px;
+	}
+}

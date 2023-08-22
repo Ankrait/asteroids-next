@@ -1,0 +1,52 @@
+.button {
+	background: var(--color-orange-smooth);
+	padding: 2px 11px;
+
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	border-radius: 16px;
+
+	color: var(--color-orange);
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 1.81;
+	letter-spacing: 1px;
+
+	user-select: none;
+
+	@media (hover: hover) and (pointer: fine) {
+		transition: background 0.4s, color 0.4s;
+		&:hover {
+			background: var(--color-orange);
+			color: var(--color-white);
+		}
+	}
+
+	@media not ((hover: hover) and (pointer: fine)) {
+		transition: background 0.2s, color 0.2s;
+		&:active {
+			background: var(--color-orange);
+			color: var(--color-white);
+		}
+	}
+}
+
+.in_cart {
+	background: var(--color-orange-smooth);
+	color: var(--color-white);
+
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			background: var(--color-orange-smooth);
+			color: var(--color-black);
+		}
+	}
+
+	@media not ((hover: hover) and (pointer: fine)) {
+		&:active {
+			background: var(--color-orange-smooth);
+			color: var(--color-black);
+		}
+	}
+}

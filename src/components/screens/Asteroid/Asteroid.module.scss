@@ -1,0 +1,183 @@
+.wrapper {
+	height: 100%;
+
+	display: flex;
+	align-content: start;
+	gap: 25px;
+}
+
+.image {
+	position: relative;
+
+	align-self: start;
+	aspect-ratio: 1/1;
+	flex: 0 1 300px;
+
+	img {
+		transform: rotate(-27deg);
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.title {
+	color: var(--color-white);
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.33;
+}
+
+.information {
+	margin: 16px 0 0 0;
+	color: var(--color-white);
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.unit {
+	margin: 0 0 8px 0;
+}
+
+.approach {
+	flex: 0 0 auto;
+	margin: 20px 0 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.approach_list {
+	display: grid;
+	grid-template: repeat(2, 1fr) auto / repeat(2, 1fr);
+	gap: 32px;
+
+	border-radius: 24px;
+	padding: 16px;
+	background: #232526;
+}
+
+.approach_item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.approach_date {
+	font-size: 24px;
+	font-weight: 700;
+}
+.approach_orbit,
+.approach_speed,
+.approach_dist {
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.approach_dist {
+	gap: 4px !important;
+}
+
+.approach_orbit {
+	text-align: center;
+}
+
+.approach_speed {
+	margin: 8px 0 0 0;
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.pagination {
+	align-self: center;
+	justify-self: start;
+	grid-area: 3 / 1 / 3 / 3;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	> li {
+		> a {
+			cursor: pointer;
+		}
+
+		&:first-child,
+		&:last-child {
+			flex: 1 1 auto;
+		}
+
+		&:last-child {
+			text-align: right;
+		}
+	}
+}
+
+.pagination_item {
+	padding: 4px 11px;
+	font-size: 18px;
+	border-radius: 6px;
+	color: var(--color-white);
+}
+
+.pagination_active {
+	background: var(--color-orange);
+	color: var(--color-black);
+}
+
+.mobile_pages {
+	display: none;
+}
+
+@media only screen and (max-width: 900px) {
+	.image {
+		position: absolute;
+		width: 220px;
+		height: 220px;
+
+		top: 20px;
+		right: 20px;
+	}
+
+	.wrapper {
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.image {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.approach_list {
+		position: relative;
+		grid-template: auto/ 1fr;
+	}
+
+	.pagination {
+		grid-area: auto;
+
+		> li {
+			display: none;
+
+			&:last-child,
+			&:first-child {
+				display: block;
+			}
+		}
+	}
+
+	.mobile_pages {
+		display: block;
+		position: absolute;
+		bottom: 16px;
+		left: 50%;
+		transform: translate3d(-50%, 0, 0);
+	}
+}

@@ -1,0 +1,32 @@
+.wrapper {
+	position: relative;
+	z-index: 2;
+}
+
+.logo {
+	> a {
+		display: inline-block;
+		color: var(--color-orange);
+		font-size: 32px;
+
+		transition: transform 0.3s;
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		@media not ((hover: hover) and (pointer: fine)) {
+			&:active {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.text {
+	margin: 8px 0 0 0;
+	font-size: 16px;
+	line-height: 1.5;
+}

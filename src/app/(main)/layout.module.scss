@@ -1,0 +1,37 @@
+.earth_container {
+	position: fixed;
+	top: 150px;
+	right: calc(50% + 250px);
+	height: max(min(620px, 72vh), 300px);
+	aspect-ratio: 87/100;
+}
+
+.content {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 150px 40px 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.earth_container {
+		right: calc(50% + 180px);
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.content {
+		padding-right: 0;
+	}
+
+	.earth_container {
+		right: 360px;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.earth_container {
+		top: 123px;
+		right: 327px;
+	}
+}

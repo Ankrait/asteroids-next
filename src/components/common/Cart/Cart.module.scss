@@ -1,0 +1,71 @@
+.wrapper {
+	max-width: 150px;
+	width: 100%;
+	padding: 16px;
+
+	border-radius: 24px;
+	background: #232526;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 1.33;
+}
+
+.count {
+	line-height: 1.5;
+}
+
+.button {
+	width: 100%;
+	padding: 12px 0;
+	margin: 32px 0 0 0;
+	text-align: center;
+
+	border-radius: 40px;
+	background: var(--color-orange);
+
+	color: var(--white-base, #fff);
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.5;
+
+	transition: background 0.3s;
+
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			background: var(--color-orange-smooth);
+		}
+	}
+
+	@media not ((hover: hover) and (pointer: fine)) {
+		transition: background 0.2s;
+		&:active {
+			background: var(--color-orange-smooth);
+		}
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.wrapper {
+		position: fixed;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		right: auto;
+		top: auto;
+		max-width: 100%;
+
+		border-radius: 0;
+
+		display: grid;
+		grid-template: repeat(2, 1fr) / 3fr 2fr;
+	}
+
+	.button {
+		grid-area: 1 / 2 / 3 / 3;
+		margin: 0 0 0 0;
+	}
+}
