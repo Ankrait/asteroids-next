@@ -1,5 +1,6 @@
 .earth_container {
 	position: fixed;
+	z-index: 1s;
 	top: 150px;
 	right: calc(50% + 250px);
 	height: max(min(620px, 72vh), 300px);
