@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
-import Header from '@/components/common/Header/Header';
 import ScrollTopButton from '@/components/common/ScrollTopButton/ScrollTopButton';
 
-import earth_img from '../../../public/earth.png';
+import earth_img from '../earth.png';
 
 import styles from './layout.module.scss';
 

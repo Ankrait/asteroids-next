@@ -3,8 +3,8 @@ import { FC, useState } from 'react';
 import Image from 'next/image';
 import Pagination from 'react-paginate';
 
-import asteroid_img from '../../../../public/asteroid.png';
-import speed_img from '../../../../public/speed.svg';
+import asteroid_img from '../../../app/asteroid.png';
+import speed_img from '../../../app/speed.svg';
 import { numberWithSpaces } from '@/common/utils';
 import { IAsteroid } from '@/services/services.interface';
 import { DistanceUnitType } from '@/common/interfaces';

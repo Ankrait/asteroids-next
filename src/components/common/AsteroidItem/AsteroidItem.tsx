@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import cn from 'classnames';
 
-import asteroid_img from '../../../../public/asteroid.png';
+import asteroid_img from '../../../app/asteroid.png';
 import { IReducedAsteroid } from '@/services/services.interface';
 import { MAX_DIAMETER_SMALL_ASTEROID } from '@/common/constants';
 import { DistanceUnitType, updateCartValueType } from '@/common/interfaces';

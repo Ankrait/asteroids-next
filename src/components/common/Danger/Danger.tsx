@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import warning_img from '../../../../public/warning.png';
+import warning_img from '../../../app/warning.png';
 
 import styles from './Danger.module.scss';
 
