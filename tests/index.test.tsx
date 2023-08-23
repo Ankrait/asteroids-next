@@ -1,13 +1,24 @@
 import Home from '@/components/screens/Home/Home';
 import '@testing-library/jest-dom';
-import { fireEvent, render, screen } from '@testing-library/react';
-import * as nextRouter from 'next/navigation';
+import { render, screen } from '@testing-library/react';
 
+jest.mock('next/navigation', () => ({
+	useRouter() {
+		return {
+			route: '/',
+			pathname: '',
+			query: '',
+			asPath: '',
+		};
+	},
+}));
 
 describe('Home render', () => {
-	it('default render', () => {
+	it('default render', async () => {
 		render(<Home data={[]} />);
-		// check if all components are rendered
-		expect(screen.findAllByAltText('earth')).toBeInTheDocument();
+
+		expect(screen.getByText('Ближайшие подлёты астероидов')).toBeInTheDocument();
+		expect(screen.getByTestId('list')).toBeInTheDocument();
+		expect(screen.queryByTestId('item')).toBeNull();
 	});
 });

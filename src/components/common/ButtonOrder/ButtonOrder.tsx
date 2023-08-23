@@ -15,7 +15,7 @@ const ButtonOrder: FC<IButtonOrder> = ({ isInCart, className, ...restProps }) =>
 		[styles.in_cart]: isInCart,
 	});
 	return (
-		<button className={buttonClass} {...restProps}>
+		<button data-testid='button' className={buttonClass} {...restProps}>
 			{isInCart ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ'}
 		</button>
 	);

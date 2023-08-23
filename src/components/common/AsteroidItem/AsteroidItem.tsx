@@ -24,7 +24,13 @@ interface IAsteroidItem {
 	};
 }
 
-const AsteroidItem: FC<IAsteroidItem> = ({ data, className, distanceUnit, cartInfo }) => {
+const AsteroidItem: FC<IAsteroidItem> = ({
+	data,
+	className,
+	distanceUnit,
+	cartInfo,
+	...restProps
+}) => {
 	const { id, name, diameter, distance, date, isDangerous } = data;
 
 	const onButtonClick = () => {
@@ -35,7 +41,7 @@ const AsteroidItem: FC<IAsteroidItem> = ({ data, className, distanceUnit, cartIn
 	};
 
 	return (
-		<div className={cn(styles.wrapper, className)}>
+		<div className={cn(styles.wrapper, className)} {...restProps}>
 			<p className={styles.date}>{date}</p>
 			<div className={styles.information}>
 				<Distance distance={distance} distanceUnit={distanceUnit} />

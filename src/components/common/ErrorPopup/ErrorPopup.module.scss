@@ -1,0 +1,23 @@
+.wrapper {
+	cursor: pointer;
+
+	position: fixed;
+	z-index: 10;
+	top: 32px;
+	left: 50%;
+	transform: translate3d(-50%, 0, 0);
+
+	max-width: 300px;
+	border-radius: 12px;
+
+	padding: 10px;
+	font-size: 20px;
+	background: rgb(133, 0, 0);
+
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.opened {
+	opacity: 1;
+}

@@ -33,14 +33,17 @@ const Home: FC<IHome> = ({ data }) => {
 			let tmp_count = count;
 			let response = await nasaAPI.getDayAsteroids(tmp_count);
 
-			while (response.length === 0) {
+			while (typeof response !== 'string' && response.length === 0) {
 				tmp_count++;
 				response = await nasaAPI.getDayAsteroids(tmp_count);
 			}
 
 			setCount(tmp_count + 1);
-			setAsteroidsData((prev) => [...prev, ...response]);
-			setLoading(false);
+			if (typeof response !== 'string') {
+				// @ts-ignore
+				setAsteroidsData((prev) => [...prev, ...response]);
+				setLoading(false);
+			}
 		};
 
 		const onScroll = () => {
@@ -105,9 +108,10 @@ const Home: FC<IHome> = ({ data }) => {
 					active={distanceUnit}
 					setDistanceUnit={setDistanceUnit}
 				/>
-				<div ref={ref} className={styles.list}>
+				<div data-testid="list" ref={ref} className={styles.list}>
 					{asteroidsData.map((asteroid) => (
 						<AsteroidItem
+							data-testid="item"
 							distanceUnit={distanceUnit}
 							key={asteroid.id}
 							cartInfo={{

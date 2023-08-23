@@ -16,7 +16,7 @@ interface IDistanceProps extends IHtmlProps {
 const Distance: FC<IDistanceProps> = ({ distance, distanceUnit, className }) => {
 	return (
 		<div className={cn(className, styles.wrapper)}>
-			<p>
+			<p data-testid='value'>
 				{distanceUnit === 'kilometers'
 					? `${numberWithSpaces(distance.kilometers)} км`
 					: `${numberWithSpaces(distance.lunar)} лунные орбиты`}

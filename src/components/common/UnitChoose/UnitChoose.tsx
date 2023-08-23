@@ -14,6 +14,7 @@ const UnitChoose: FC<IUnitChoose> = ({ active, setDistanceUnit, className }) => 
 	return (
 		<div className={cn(styles.wrapper, className)}>
 			<p
+				data-testid="km"
 				className={cn(styles.unit, {
 					[styles.active]: active === 'kilometers',
 				})}
@@ -22,6 +23,7 @@ const UnitChoose: FC<IUnitChoose> = ({ active, setDistanceUnit, className }) => 
 			</p>
 			<span>|</span>
 			<p
+				data-testid="lunar"
 				className={cn(styles.unit, {
 					[styles.active]: active === 'lunar',
 				})}

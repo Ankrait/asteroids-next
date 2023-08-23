@@ -155,8 +155,11 @@
 }
 
 @media only screen and (max-width: 580px) {
-	.approach_list {
+	.approach {
 		position: relative;
+	}
+
+	.approach_list {
 		grid-template: auto/ 1fr;
 	}
 

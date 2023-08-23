@@ -11,7 +11,7 @@ axios.defaults.baseURL = 'https://api.nasa.gov/neo/rest/v1';
 axios.defaults.params = { api_key: process.env.NEXT_PUBLIC_NASA_API_KEY };
 
 export const nasaAPI = {
-	getDayAsteroids: async (dayCount = 0): Promise<IReducedAsteroid[]> => {
+	getDayAsteroids: async (dayCount = 0): Promise<IReducedAsteroid[] | string> => {
 		const result: IReducedAsteroid[] = [];
 
 		const dateObj = new Date();
@@ -24,9 +24,9 @@ export const nasaAPI = {
 		try {
 			response = await axios.get(`/feed?start_date=${date}&end_date=${date}`);
 		} catch (error) {
-			// if (error instanceof AxiosError) {
-			// 	error.response?.status
-			//
+			if (error instanceof AxiosError) {
+				return !error.response ? 'Ошибка интернета' : 'Ошибка сервера';
+			}
 			return [];
 		}
 
@@ -54,7 +54,7 @@ export const nasaAPI = {
 
 		return result;
 	},
-	getAsteroid: async (key: string): Promise<IAsteroid | null> => {
+	getAsteroid: async (key: string): Promise<IAsteroid | null | string> => {
 		try {
 			const response = await axios.get<INasaAsteroid>(`/neo/${key}`);
 
@@ -98,7 +98,10 @@ export const nasaAPI = {
 					max: Math.round(diameters.estimated_diameter_max),
 				},
 			};
-		} catch {
+		} catch (error) {
+			if (error instanceof AxiosError) {
+				return !error.response ? 'Ошибка интернета' : 'Ошибка сервера';
+			}
 			return null;
 		}
 	},
